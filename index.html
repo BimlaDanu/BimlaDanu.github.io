@@ -9,40 +9,61 @@
     body {
       margin: 0;
       font-family: Arial, sans-serif;
+    }
+
+    /* Top centered navigation */
+    .topnav {
+      background: #f7f7f7;
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
+      text-align: center; /* centered */
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+    .topnav a {
+      margin: 0 15px;
+      text-decoration: none;
+      color: #0066cc;
+      font-weight: bold;
+    }
+    .topnav a:hover {
+      text-decoration: underline;
+    }
+
+    .layout {
       display: flex;
     }
 
-    /* Sidebar */
+    /* Sidebar on left */
     .sidebar {
-      height: 100vh;
       width: 240px;
       background: #f7f7f7;
       padding: 20px;
-      box-shadow: 2px 0 6px rgba(0,0,0,0.1);
+      box-shadow: 2px 0 6px rgba(0, 0, 0, 0.1);
       position: fixed;
       left: 0;
-      top: 0;
+      top: 56px; /* below topnav */
+      bottom: 0;
       overflow-y: auto;
     }
-    .sidebar h2 {
+    .sidebar h1 {
+      font-size: 1.4em;
       margin-top: 0;
       color: #333;
     }
-    .sidebar a {
+    .sidebar a, .sidebar span {
       display: block;
-      text-decoration: none;
-      color: #0066cc;
       margin: 10px 0;
-      padding: 6px 0;
+      color: #0066cc;
+      text-decoration: none;
+    }
+    .sidebar span {
+      color: #444;
+      font-size: 0.95em;
     }
     .sidebar a:hover {
       text-decoration: underline;
-    }
-    .sidebar span {
-      display: block;
-      margin: 8px 0;
-      color: #444;
-      font-size: 0.95em;
     }
 
     /* Main content */
@@ -51,79 +72,105 @@
       padding: 40px;
       max-width: 900px;
       line-height: 1.6;
+      margin-top: 56px; /* below topnav */
     }
-    h1 {
+    h1, h2 {
       color: #333;
     }
+    section {
+      margin-bottom: 60px;
+    }
     footer {
-      margin-top: 60px;
       font-size: 0.9em;
       color: #777;
+      text-align: center;
+      padding-top: 20px;
     }
   </style>
 </head>
+
 <body>
 
+  <!-- Top navigation centered -->
+  <div class="topnav">
+    <a href="https://BimlaDanu.github.io/">Homepage</a>
+    <a href="#talks">Talks</a>
+    <a href="#blogs">Blogs</a>
+    <a href="#publications">Publications</a>
+    <a href="#cv">CV</a>
+    <a href="#contact">Contact</a>
+  </div>
 
-   <!---->
-  <aside class="sidebar">
-    <h1>Bimla Danu 👩‍🔬</h1>
-    <a href="https://www.physik.uni-wuerzburg.de/" target="_blank" style="text-decoration:none; color:#333;">
-    Researcher, Institut für Theoretische Physik und Astrophysik, Universität Würzburg
-    </a>
-    <a href="mailto:bimla.danu@physik.uni-wuerzburg.de">✉️ Email</a>
-    <span>📞 +49 931 31-83410</span>
-    <a href="https://github.com/BimlaDanu" target="_blank">🐙 GitHub</a>
-    <a href="https://www.linkedin.com/in/bimla-danu-1b71621b" target="_blank">🔗 LinkedIn</a>
-    <a href="https://scholar.google.com/citations?user=6cgXV9UAAAAJ" target="_blank">📚 Google Scholar</a>
-    <a href="https://orcid.org/0000-0002-5210-1511" target="_blank">🆔 ORCID</a>
-  </aside>
+  <div class="layout">
 
-  <div class="content">
-      <!-- <h1>Welcome</h1> -->
-    <p> Hallo! 
-      <ul>
-      My research focus is on the theoretical and computational study of strongly correlated electron systems. In general, using tools from quantum many-body physics and statistical mechanics, we seek to understand and characterize different phases and properties of correlated quantum matter. Examples include the magnetism,   Kondo effect, heavy fermions, spin liquids,  quantum criticality, quantum Hall effect, high-temperature superconductivity, and related physical phenomena.
-.</p>
-    </ul>
+    <!-- Sidebar with your contact links -->
+    <aside class="sidebar">
+        <!--  <h2>Bimla Danu 👩‍🔬</h2>
+       <h2>Researcher</h2> -->
+        <div style="font-size:1.4em; margin-bottom:8px; color:#333;">
+        Bimla Danu 👩‍🔬
+      </div>
+      <div style="font-size:1.1em; margin-bottom:8px; color:#555;">
+        Researcher
+      </div>
+      <a href="https://www.physik.uni-wuerzburg.de/" target="_blank">
+       Institut für Theoretische Physik und Astrophysik, Universität Würzburg
+      </a>
+      <a href="mailto:bimla.danu@physik.uni-wuerzburg.de">✉️ Email</a>
+      <span>📞 +49 931 31-83410</span>
+      <a href="https://github.com/BimlaDanu" target="_blank">🐙 GitHub</a>
+      <a href="https://www.linkedin.com/in/bimla-danu-1b71621b" target="_blank">🔗 LinkedIn</a>
+      <a href="https://scholar.google.com/citations?user=6cgXV9UAAAAJ" target="_blank">📚 Google Scholar</a>
+      <a href="https://orcid.org/0000-0002-5210-1511" target="_blank">🆔 ORCID</a>
+    </aside>
 
-    <h2>Research Interests</h2>
-    <ul>
-      <li>Theoretical condensed matter physics</li>
-      <li>Strongly correlated electron systems</li>
-      <li>Computational many-body physics</li>
-      <!-- … -->
-    </ul>
+    <!-- Main content -->
+    <div class="content">
 
+      Hallo! 
 
-  <section>
-    <h2>Academic Career</h2>
-    <ul>
-      <li><strong>DFG principal investigator</strong>, Institut für Theoretische Physik und Astrophysik, Wurzburg: 2023–present</li>
-      <li><strong>Postdoctoral Researcher</strong>, Institute for Theoretical Physics and Astrophysics, Wurzburg: 2019–2023</li>
-      <li><strong>Scientist</strong>, École Polytechnique Fédérale de Lausanne: 2017–2019</li>
-      <li><strong>Postdoctoral Fellow</strong>, Institute of Mathematical Sciences, India: 2015-2017</li>
-      <li><strong>Lecturer in Physics</strong>, Sardar Bhagat Singh Govt. P.G. College, India: 2014–2015</li>
-    </ul>
-  </section>
+      <p>       
+        Welcome to my academic homepage. Welcome to my page. My research focus is on the theoretical and computational study of strongly correlated electron systems. Using tools from quantum many-body physics and statistical mechanics, we seek to understand and characterize different phases and properties of correlated quantum matter. Examples include the magnetism,   Kondo effect, heavy fermions, spin liquids,  quantum criticality, quantum Hall effect, high-temperature superconductivity, and related physical phenomena.
+      </p>
 
+      <!-- Research Interests -->
+      <section id="research">
+        <h2>Research Interests</h2>
+        <ul>
+          <li>Theoretical condensed matter physics</li>
+          <li>Strongly correlated electron systems</li>
+          <li>Computational many-body physics</li>
+        </ul>
+      </section>
 
-  <section>
-    <h2>Education</h2>
-    <ul>
-      <li><strong>PhD</strong> in Theoretical Condensed Matter Physics: Jawaharlal Nehru University, India</li>
-      <li><strong>Master of Physics</strong>: D.S.B. Campus Kumaun University, India</li>
-      <li><strong>Bachelor of Science</strong>: D.S.B. Campus Kumaun University, India</li>
-    </ul>
-  </section>
+      <!-- Academic Career -->
+      <section id="career">
+        <h2>Academic Career</h2>
+        <ul> 
+          <li><strong>DFG principal investigator</strong>, Institut für Theoretische Physik und Astrophysik, Wurzburg: 2023 onwards</li>
+          <li><strong>Postdoctoral Researcher</strong>, Institute for Theoretical Physics and Astrophysics, Wurzburg: 2019-2023</li>
+          <li><strong>Scientist</strong>, École Polytechnique Fédérale de Lausanne: 2017-2019</li>
+          <li><strong>Postdoctoral Fellow</strong>, Institute of Mathematical Sciences, India: 2015-2017</li>
+          <li><strong>Lecturer in Physics</strong>, Sardar Bhagat Singh Govt. P.G. College, India: 2014-2015</li>
+        </ul>
+      </section>
 
+      <!-- Education -->
+      <section id="education">
+        <h2>Education</h2>
+        <ul>
+          <li><strong>PhD</strong> in Theoretical Condensed Matter Physics: Jawaharlal Nehru University, India</li>
+          <li><strong>Master of Physics</strong>: D.S.B. Campus Kumaun University, India</li>
+          <li><strong>Bachelor of Science</strong>: D.S.B. Campus Kumaun University, India</li>
+        </ul>
+      </section>
 
-<section>
-  <h2>Selected Publications</h2>
-
-  <ul>
-
-    <li>
+      <!-- Selected Publications -->
+         <!-- <section id="publications"> -->
+        <section>
+        <h2>Selected Publications</h2>
+        <ul>
+              <li>
       Bimla Danu, Fakher F. Assaad, 
       <em>Phases and phase transitions of an S=3/2 chain on metallic and semi‑metallic surfaces</em>, 
       <a href="https://arxiv.org/abs/2509.11392" target="_blank">
@@ -132,18 +179,18 @@
     </li>
 
     <li>
-      Bimla Danu, Zihong Liu, Fakher F. Assaad & Marcin Raczkowski, 
-      <em>Zooming in on heavy fermions in Kondo lattice models</em>, 
-      <a href="https://doi.org/10.1103/PhysRevB.104.155128" target="_blank">
-        Phys. Rev. B 104, 155128 (2021)
-      </a>.
-    </li>
-
-    <li>
       A. M. M. Pruisken, Bimla Danu & R. Shankar, 
       <em>Super universality of dimerised SU(N+M) spin chains</em>, 
       <a href="https://doi.org/10.1103/PhysRevB.105.155111" target="_blank">
         Phys. Rev. B 105, 155111 (2022)
+      </a>.
+    </li>
+
+    <li>
+      Bimla Danu, Zihong Liu, Fakher F. Assaad & Marcin Raczkowski, 
+      <em>Zooming in on heavy fermions in Kondo lattice models</em>, 
+      <a href="https://doi.org/10.1103/PhysRevB.104.155128" target="_blank">
+        Phys. Rev. B 104, 155128 (2021)
       </a>.
     </li>
 
@@ -167,61 +214,75 @@
       Bimla Danu, Gautam Nambiar & R. Ganesh, 
       <em>Extended degeneracy and order by disorder in the square lattice J₁‑J₂‑J₃ model</em>, 
       <a href="http://link.aps.org/doi/10.1103/PhysRevB.94.094438" target="_blank">
-        Phys. Rev. B 94, 094438
+        Phys. Rev. B 94, 094438 (2016)
       </a>.
     </li>
-
-  </ul>
-</section>
-
+        </ul>
+      </section>
 
 
-  <section>
-  <h2>Publications</h2>
-
+  <section id="publications">
+  <h2> Publications</h2>
   <p>
     📄 <a href="https://arxiv.org/search/cond-mat?searchtype=author&query=Danu,+B" target="_blank">
       Click here for preprints of all my publications on arXiv
     </a>
   </p>
-
   <p>
     📚 <a href="https://scholar.google.com/citations?user=6cgXV9UAAAAJ" target="_blank">
       Click here for my Google Scholar profile
     </a>
   </p>
-</section>
+  </section>
 
-<section>
-  <h2>Contact</h2>
 
-  <p><strong>Email:</strong></p>
-  <ul>
-    <li><a href="mailto:bimla.danu@physik.uni-wuerzburg.de">bimla.danu@physik.uni-wuerzburg.de</a></li>
-    <li><a href="mailto:danubimla1@gmail.com">danubimla1@gmail.com</a></li>
-  </ul>
+      <!-- Talks -->
+      <section id="talks">
+        <h2> Selected  Recent Talks</h2>
+        <ul>
+          <li> Physics of an S=3/2 chain on metallic and semi-metallic surfaces",  School on Correlated Quantum Materials & Solid State Quantum Systems,  15-19 September  2025, University of Würzburg, Germany.</li>
+          <li> Physics of an spin-3/2 chain on  two dimensional solid surfaces",  The second Grete Hermann Network(GHN),  01 July  2025, University of Würzburg, Germany.</li>
+          <li> 1+1D on 2+1D Dirac system",  Symposium on Modern approaches to quantum fields and quantum materials (Würzburg-Dortmund-Bochum),  20 June  2025, University of Würzburg, Germany.</li>
+          <li> Phases and quantum phase transitions in a spin-1/2 chain on solid surfaces",  ct.qmat Cluster Retreat, 20-22 March 2023,  Bayreuth, Germany.</li>
+          <li> Spin chain on a metallic surface: Dissipation-induced order versus Kondo entanglement",  DPG meeting of the Condensed matter Section, 4-9 September 2022, University of Regensburg, Germany.</li>
+        </ul>
+      </section>
 
-  <p><strong>Address:</strong><br>
-     Theoretische Physik I<br>
-     Julius‑Maximilians‑Universität Würzburg<br>
-     Am Hubland<br>
-     97074 Würzburg<br>
-     Germany
-  </p>
-</section>
-
-    <!-- CV Link -->
-
-   <!---
+  
+      <!-- CV -->
+   <section id="cv">
+    <h2>CV</h2>
     <p>
-    📄 <a href="https://BimlaDanu.github.io/CV_FILES/CV-BimlaDanu.pdf" target="_blank" style="text-decoration:none; font-weight:bold;">
-        View / Download My CV
-    </a>
-  </p>
-  -->
+      You can find my detailed CV here: 
+      <a href="https://BimlaDanu.github.io/CV_FILES/CV-BimlaDanu.pdf" target="_blank">
+        📄 View CV
+      </a>
+    </p>
+  </section>
+
+      <!-- Blogs -->
+      <section id="blogs">
+        <h2>Blogs</h2>
+        <p> Coming soon!</p>
+      </section>
 
 
-    <footer>© 2026 Bimla Danu</footer>
+      <!-- Contact -->
+      <section id="contact">
+        <h2>Contact</h2>
+        <ul>
+          <li><a href="mailto:bimla.danu@physik.uni-wuerzburg.de">bimla.danu@physik.uni-wuerzburg.de</a></li>
+          <li><a href="mailto:danubimla1@gmail.com">danubimla1@gmail.com</a></li>
+        </ul>
+        <p><strong>Address:</strong><br>
+           Theoretische Physik I, Universität Würzburg<br>
+           Am Hubland, 97074 Würzburg, Germany
+        </p>
+      </section>
+
+      <footer>© 2026 Bimla Danu</footer>
+    </div>
+
   </div>
 
 </body>
